@@ -16,7 +16,9 @@ for ($i = 0; $i < count($barang); $i++) {
     $jumlah_beli[$i] = rand(1, 10);
 }
 
+// =====================
 // TABEL 1 Daftar Barang
+// =====================
 echo "<div style='display: flex; justify-content: center;'>";
 echo "<table style='border-collapse: collapse;width: 60%;background: white;border-radius: 10px;overflow: hidden;box-shadow: 0 4px 8px rgba(0,0,0,0.1);font-family: Arial, sans-serif;'>";
 echo "<tr style='background: linear-gradient(135deg, #87CEEB, #4682B4); color: white;'>
@@ -37,7 +39,9 @@ echo "</table></div>";
 
 echo "<div style='width: 80%;height: 3px;background: #87CEEB;margin: 40px auto;border-radius: 10px;'></div>";
 
+// =====================
 // TABEL 2 Daftar Pembelian
+// =====================
 echo "<h2 style='text-align:center; color:#032B44; margin-top:30px;'>Daftar Pembelian</h2>";
 echo "<div style='display: flex; justify-content: center;'>";
 echo "<table style='border-collapse: collapse;width: 70%;background: white;border-radius: 10px;overflow: hidden;box-shadow: 0 4px 8px rgba(0,0,0,0.1);font-family: Arial, sans-serif;'>";
@@ -62,7 +66,9 @@ echo "</table></div>";
 
 echo "<div style='width: 80%;height: 3px;background: #87CEEB;margin: 40px auto;border-radius: 10px;'></div>";
 
+// =====================
 // TABEL 3 Total Belanja
+// =====================
 echo "<h2 style='text-align:center; color:#032B44; margin-top:30px;'>Total Belanja</h2>";
 echo "<div style='display:flex;justify-content:center;'>";
 echo "<table style='width:80%;border-collapse:collapse;background:white;border-radius:10px;overflow:hidden;box-shadow:0 4px 8px rgba(0,0,0,0.1);font-family:Arial,sans-serif;'>";
@@ -86,14 +92,16 @@ for ($i = 0; $i < count($barang); $i++) {
 }
 
 echo "<tr style='background:#E0FFFF;font-weight:bold;color:#032B44;'>
-<td colspan='4' style='padding:15px;text-align:right;'>Total Belanja Keseluruhan :</td>
+<td colspan='4' style='padding:15px;text-align:right;'>Total Belanja :</td>
 <td style='padding:15px;text-align:right;'>Rp " . number_format($total_belanja, 0, ',', '.') . "</td></tr>";
 
 echo "</table></div>";
 
 echo "<div style='width: 80%;height: 3px;background: #87CEEB;margin: 40px auto;border-radius: 10px;'></div>";
 
+// =====================
 // TABEL 4 Faktur Belanja
+// =====================
 echo "<h2 style='text-align:center;color:#032B44;margin-top:30px;'>FAKTUR PEMBELIAN</h2>";
 echo "<div style='display:flex;justify-content:center;'>";
 echo "<table style='width:80%;border-collapse:collapse;background:white;border-radius:10px;overflow:hidden;box-shadow:0 4px 8px rgba(0,0,0,0.1);font-family:Arial,sans-serif;'>";
@@ -140,4 +148,40 @@ echo "<tr style='background:#F8F8F8;'>
 <td colspan='5' style='padding:15px;text-align:center;color:#666;font-style:italic;'>Terima kasih telah berbelanja di POLGAN MART!</td></tr>";
 
 echo "</table></div>";
+echo "<div style='width: 80%;height: 3px;background: #87CEEB;margin: 40px auto;border-radius: 10px;'></div>";
+
+// =====================
+// TOTAL PEMBAYARAN SETELAH DISKON
+// =====================
+echo "<h2 style='text-align:center;color:#032B44;margin-top:40px;'>TOTAL PEMBAYARAN</h2>";
+echo "<div style='display:flex;justify-content:center; margin-bottom:40px;'>";
+echo "<table style='width:50%;border-collapse:collapse;background:white;border-radius:10px;overflow:hidden;
+box-shadow:0 4px 8px rgba(0,0,0,0.1);font-family:Arial,sans-serif;'>";
+
+// Header tabel biru muda
+echo "<tr style='background:linear-gradient(135deg, #87CEEB, #4682B4);color:white;'>
+<th style='padding:15px;text-align:center;font-size:18px;'>Keterangan</th>
+<th style='padding:15px;text-align:center;font-size:18px;'>Jumlah</th>
+</tr>";
+
+// Total Bayar sebelum diskon
+echo "<tr style='background:#F0F8FF;'>
+<td style='padding:12px;text-align:left;font-weight:bold;color:#032B44;'>Total Belanja</td>
+<td style='padding:12px;text-align:right;font-weight:bold;color:#032B44;'>Rp " . number_format($grand_total, 0, ',', '.') . "</td>
+</tr>";
+
+// Diskon
+echo "<tr style='background:#E0FFFF;'>
+<td style='padding:12px;text-align:left;font-weight:bold;color:#032B44;'>Diskon ($persen_diskon%)</td>
+<td style='padding:12px;text-align:right;font-weight:bold;color:#032B44;'>- Rp " . number_format($diskon, 0, ',', '.') . "</td>
+</tr>";
+
+// Total Pembayaran
+echo "<tr style='background:#ADD8E6;font-weight:bold;color:#032B44;'>
+<td style='padding:15px;text-align:left;font-size:18px;'>TOTAL PEMBAYARAN</td>
+<td style='padding:15px;text-align:right;font-size:18px;'>Rp " . number_format($total_akhir, 0, ',', '.') . "</td>
+</tr>";
+
+echo "</table></div>";
+
 ?>
